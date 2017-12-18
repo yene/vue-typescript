@@ -20,15 +20,25 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'HelloWorld',
+  methods: {
+    hello (v: string): string {
+      return 'Hello ' + v
+    }
+  },
+  mounted () {
+    this.msg = this.hello('World')
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: ''
     }
   }
-}
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
